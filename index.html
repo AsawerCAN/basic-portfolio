@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asawer's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="public/ALogo.png" type="image/x-icon" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- navbar -->
+
+    <nav>
+      <div class="logo">
+        <h2><a href="#"><span>A</span>s<span>a</span>wer</a></h2>
+        
+      </div>
+      <ul id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-icon">
+        <i class="bx bx-menu"></i>
+      </div>
+    </nav>
+
+    <!-- hero section -->
+
+    <section id="home" class="hero-section">
+      <div class="left-section animate__animated animate__slideInLeft">
+        <h1 class="animate__animated animate__slideInLeft">
+          Hi! I'm Asawer Naseer
+        </h1>
+        <h2>And I'm <span id="element"></span></h2>
+        <p>
+          I architect and sustain dynamic websites, crafting cutting-edge
+          features that captivate and delight users. Together, let's engineer
+          something remarkable and transformative!
+        </p>
+
+        <div class="btn-box">
+          <a href="#contact" class="btn color-btn">Contact Us</a>
+        </div>
+
+        <div class="social-icons">
+          <a href="mailto:" target="_blank"><i class="bx bx-envelope"></i></a>
+
+          <a target="_blank" href="https://github.com/AsawerCAN"
+            ><i class="bx bxl-github"></i
+          ></a>
+          <a target="_blank" href="https://www.linkedin.com/in/asawer-n/"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
+        </div>
+      </div>
+
+      <!--right hero section -->
+
+      <div class="right animate__animated animate__slideInRight">
+        <img src="images/profile.jpeg" alt="profile picture" />
+        <div class="back-image"></div>
+      </div>
+    </section>
+
+    <!-- about section -->
+
+    <section
+      id="about"
+      class="about-section animate__animated animate__slideInLeft"
+    >
+      <h2><span>About Me</span></h2>
+      <h3>Experienced Web Developer</h3>
+      <p>
+        I'm a dedicated web developer with over one years of experience in
+        building responsive, dynamic and user-friendly websites.
+      </p>
+      <a href="#portfolio" class="btn color-btn">View Portfolio</a>
+    </section>
+
+    <!-- skill section -->
+
+    <section id="skills" class="skill-section">
+      <h2 class="animate__animated animate__slideInLeft">
+        <span>My Skills</span>
+      </h2>
+      <div class="skill-container">
+        <div class="left">
+          <img src="images/react-js.png" alt="" />
+          <img src="images/node-js.png" alt="" />
+        </div>
+
+        <!-- right container -->
+
+        <div class="right">
+          <div class="progress-container">
+            <div class="progress">
+              <div class="skill-name-box">
+                <h4>React</h4>
+                <h4>72%</h4>
+              </div>
+              <div class="line-background">
+                <div class="line react"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <div class="skill-name-box">
+                <h4>Node js</h4>
+                <h4>89%</h4>
+              </div>
+              <div class="line-background">
+                <div class="line node"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <div class="skill-name-box">
+                <h4>Express js</h4>
+                <h4>80%</h4>
+              </div>
+              <div class="line-background">
+                <div class="line express"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <div class="skill-name-box">
+                <h4>MongoDB</h4>
+                <h4>79%</h4>
+              </div>
+              <div class="line-background">
+                <div class="line mongodb"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <div class="skill-name-box">
+                <h4>MySQL</h4>
+                <h4>77%</h4>
+              </div>
+              <div class="line-background">
+                <div class="line mysql"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- portfolio section -->
+
+    <section id="portfolio" class="portfolio-section">
+      <h2>Latest Projects</h2>
+
+      <div class="portfolio-container">
+        <div class="project-item">
+          <img src="portfolio/project1.png" alt="" />
+          <h2>Updating Soon</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo odit optio dolor a dolore nihil aperiam officia qui, magni reiciendis corporis doloremque adipisci velit repudiandae rem aspernatur vitae porro ad.
+          </p>
+          <div class="project-link">
+            <a target="_blank" href="#"
+              >Source Code</a
+            >
+            <a target="_blank" href="#"
+              >Live Demo</a
+            >
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact section -->
+
+    <section
+      id="contact"
+      class="contact-section animate__animated animate__slideInLeft"
+    >
+      <h2><span>Contact Me</span></h2>
+
+      <div class="form-container">
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input
+            type="hidden"
+            name="access_key"
+            value="" 
+          />
+
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            rows="8"
+            name="message"
+            placeholder="Message"
+            required
+          ></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- footer -->
+
+    <footer>
+      <p>
+        <i class="bx bx-copyright"> </i> Copyright By <span>Asawer</span>Naseer
+      </p>
+    </footer>
+
+    <!-- to top btn -->
+
+    <button id="backToTopBtn" onclick="scrollToTop()">
+      <i class="bx bx-chevron-up"></i>
+    </button>
+
+    <!-- script links -->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
