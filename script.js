@@ -1,9 +1,14 @@
 // For Typing
-const typed = new Typed("#element", {
-  strings: ["Full Stack Developer", "MERN Stack Developer"],
-  typeSpeed: 90,
-  backSpeed: 70,
-  loop: true,
+document.addEventListener("DOMContentLoaded", () => {
+  const typedElement = document.querySelector("#element");
+  if (typedElement) {
+    const typed = new Typed(typedElement, {
+      strings: ["Full Stack Developer", "MERN Stack Developer"],
+      typeSpeed: 90,
+      backSpeed: 70,
+      loop: true,
+    });
+  }
 });
 
 // For Responsive Navbar
@@ -11,6 +16,7 @@ const menu = document.querySelector("#navLinks");
 const menuIcon = document.querySelector(".menu-icon i");
 
 menu.style.maxHeight = "0";
+menu.style.transition = "max-height 0.3s ease-out";
 
 menuIcon.addEventListener("click", () => {
   const isOpen = menu.style.maxHeight === "380px";
@@ -18,54 +24,63 @@ menuIcon.addEventListener("click", () => {
   menuIcon.classList.toggle("bx-x", !isOpen);
 });
 
-// Circular Progress Bar
 const numbs = document.querySelectorAll(".numb");
 
 numbs.forEach((numb) => {
-  const counter = 0;
   const targetPercentage = parseInt(numb.getAttribute("data-target"), 10);
-  const speed = 20;
+  let counter = 0;
 
-  const interval = setInterval(() => {
-    if (counter >= targetPercentage) {
-      clearInterval(interval);
-    } else {
+  const updateCounter = () => {
+    if (counter <= targetPercentage) {
       numb.textContent = `${counter++}%`;
+      requestAnimationFrame(updateCounter);
     }
-  }, speed);
+  };
+
+  requestAnimationFrame(updateCounter);
 });
 
-// Input Form
-const formInputs = document.querySelectorAll(
-  ".form-container input, .form-container textarea"
-);
+const formContainer = document.querySelector(".form-container");
 
-formInputs.forEach((input) => {
-  input.addEventListener("focus", () => input.removeAttribute("placeholder"));
-  input.addEventListener("blur", () => {
-    if (input.value.trim() === "") {
-      input.setAttribute("placeholder", input.getAttribute("data-placeholder"));
-    }
-  });
-  input.setAttribute("data-placeholder", input.getAttribute("placeholder"));
+formContainer.addEventListener("focusin", (event) => {
+  const input = event.target;
+  if (input.tagName === "INPUT" || input.tagName === "TEXTAREA") {
+    input.dataset.placeholder = input.placeholder;
+    input.placeholder = "";
+  }
 });
 
-// To Top Button
+formContainer.addEventListener("focusout", (event) => {
+  const input = event.target;
+  if (input.tagName === "INPUT" || input.tagName === "TEXTAREA") {
+    input.placeholder =
+      input.value.trim() === "" ? input.dataset.placeholder : "";
+  }
+});
+
 const myButton = document.getElementById("backToTopBtn");
 
 window.addEventListener("scroll", () => {
-  myButton.style.display = window.scrollY > 20 ? "block" : "none";
+  const scrollPosition = window.scrollY + window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
+
+  if (scrollPosition >= documentHeight - 10) {
+    myButton.style.display = "block";
+  } else {
+    myButton.style.display = "none";
+  }
 });
 
 myButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// GSAP Animation
 document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
   gsap.from(".skill-container .right", {
     opacity: 0,
-    duration: 5,
+    duration: 2,
     delay: 1,
     stagger: 0.2,
     scrollTrigger: {
@@ -73,12 +88,13 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 40%",
       end: "bottom 80%",
       scrub: 2,
+      once: true,
     },
   });
 
   gsap.from(".skill-container .left", {
     opacity: 0,
-    duration: 20,
+    duration: 2,
     delay: 1,
     stagger: 0.2,
     scrollTrigger: {
@@ -86,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 40%",
       end: "bottom 80%",
       scrub: 4,
+      once: true,
     },
   });
 
@@ -97,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".portfolio-container",
       end: "bottom 80%",
       scrub: 2,
+      once: true,
     },
   });
 
@@ -109,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 100%",
       end: "bottom 80%",
       scrub: 4,
+      once: true,
     },
   });
 });

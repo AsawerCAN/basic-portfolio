@@ -13,18 +13,18 @@
 }
 
 :root {
-  --text-color: #f5f5f5;
-  --hover-color: #6723a3;
-  --bg-color: #151a1f;
-  --second-bg-color: #080808;
+  --text-color: #e0e0e0;
+  --hover-color: #bb86fc;
+  --bg-color: #1e1e2e;
+  --second-bg-color: #2a2a3a;
   --big-font: 2.5rem;
   --normal-font: 2rem;
-  --neon-box-shadow: 0 0 0.5rem #7603db;
-  --font-neon-text-shadow: 0 0 10px rgba(118, 3, 219, 0.3),
-    0 0 20px rgba(118, 3, 219, 0.3), 0 0 30px rgba(118, 3, 219, 0.3),
-    0 0 40px rgba(118, 3, 219, 0.3), 0 0 70px rgba(118, 3, 219, 0.3),
-    0 0 80px rgba(118, 3, 219, 0.3), 0 0 100px rgba(118, 3, 219, 0.3),
-    0 0 150px rgba(118, 3, 219, 0.3);
+  --neon-box-shadow: 0 0 0.5rem #9d4edd;
+  --font-neon-text-shadow: 0 0 10px rgba(150, 75, 255, 0.4),
+    0 0 20px rgba(150, 75, 255, 0.4), 0 0 30px rgba(150, 75, 255, 0.4),
+    0 0 40px rgba(150, 75, 255, 0.4), 0 0 70px rgba(150, 75, 255, 0.4),
+    0 0 80px rgba(150, 75, 255, 0.4), 0 0 100px rgba(150, 75, 255, 0.4),
+    0 0 150px rgba(150, 75, 255, 0.4);
 }
 
 a:active {
@@ -106,11 +106,10 @@ nav ul li a:hover {
 /* hero section */
 
 .hero-section {
-  padding-top: 80px; /* Adjust padding from navbar */
+  padding-top: 80px;
   display: flex;
-  flex-wrap: wrap; /* Ensure content wraps on smaller screens */
-  align-items: center; /* Vertically centers the content */
-  justify-content: space-between; /* Space between left and right sections */
+  flex-wrap: wrap;
+  justify-content: space-between;
   background: var(--second-bg-color);
 }
 
@@ -147,7 +146,7 @@ nav ul li a:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .btn {
@@ -175,9 +174,12 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-top: 60px;
+  margin-top: 30px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
+/* Individual icon styling */
 .social-icons i {
   background: var(--bg-color);
   color: var(--hover-color);
@@ -186,18 +188,47 @@ nav ul li a:hover {
   font-size: 1.5rem;
   cursor: pointer;
   border-radius: 5px;
-  transition: 0.4s;
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.4s ease;
 }
 
+/* Hover effect */
 .social-icons i:hover {
   background: var(--hover-color);
   color: var(--bg-color);
+  transform: scale(1.1);
+}
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+  .social-icons {
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .social-icons i {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+  .social-icons {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .social-icons i {
+    padding: 0.4rem;
+    font-size: 1rem;
+  }
 }
 
 .hero-section .right {
   width: 50%;
   display: flex;
-  justify-content: flex-end; /* Aligns the content to the right */
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -207,6 +238,22 @@ nav ul li a:hover {
   border: 5px solid #6723a3;
   border-radius: 10%;
   box-shadow: 0 4px 8px rgba(125, 48, 141, 0.1);
+  transition: width 0.3s ease;
+}
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+  .hero-section .right img {
+    width: 70%;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+  .hero-section .right img {
+    width: 90%;
+    border-width: 3px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -227,15 +274,15 @@ nav ul li a:hover {
   }
 
   .hero-section .right img {
-    width: 70%; /* Adjust width for medium devices */
-    height: auto; /* Maintain aspect ratio */
+    width: 70%;
+    height: auto;
   }
 }
 
 @media (max-width: 480px) {
   .hero-section .right img {
-    width: 90%; /* Adjust width for small devices */
-    height: auto; /* Maintain aspect ratio */
+    width: 90%;
+    height: auto;
   }
 }
 
@@ -343,7 +390,7 @@ nav ul li a:hover {
   background: var(--hover-color);
   box-shadow: var(--neon-box-shadow);
   border-radius: 25px;
-  width: 0; /* Start with 0 width for animation */
+  width: 0;
 }
 
 /* Skill percentages and animations */
@@ -361,54 +408,45 @@ nav ul li a:hover {
   background: var(--hover-color);
   box-shadow: var(--neon-box-shadow);
   border-radius: 25px;
-  width: 0; /* Start with 0 width for animation */
+  width: 0;
 }
 
 /* Skill percentages and animations */
+.line.JavaScript {
+  width: 80%;
+  animation: JavaScriptAnimation 2s linear forwards;
+}
+.line.TypeScript {
+  width: 60%;
+  animation: TypeScriptAnimation 2s linear forwards;
+}
 .line.react {
   width: 72%;
-  animation: react 2s linear forwards;
+  animation: ReactAnimation 2s linear forwards;
 }
 
 .line.node {
   width: 89%;
-  animation: node 2s linear forwards;
+  animation: NodeAnimation 2s linear forwards;
 }
 
 .line.express {
   width: 80%;
-  animation: express 2s linear forwards;
+  animation: ExpressAnimation 2s linear forwards;
 }
 
 .line.mongodb {
   width: 79%;
-  animation: mongodb 2s linear forwards;
+  animation: MongoDBAnimation 2s linear forwards;
 }
 
 .line.mysql {
   width: 77%;
-  animation: mysql 2s linear forwards;
+  animation: MySQLAnimation 2s linear forwards;
 }
+
 /* Keyframes */
-@keyframes react {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 72%;
-  }
-}
-
-@keyframes node {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 89%;
-  }
-}
-
-@keyframes express {
+@keyframes JavaScriptAnimation {
   from {
     width: 0%;
   }
@@ -416,8 +454,39 @@ nav ul li a:hover {
     width: 80%;
   }
 }
-
-@keyframes mongodb {
+@keyframes TypeScriptAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 60%;
+  }
+}
+@keyframes ReactAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 72%;
+  }
+}
+@keyframes NodeAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 89%;
+  }
+}
+@keyframes ExpressAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 80%;
+  }
+}
+@keyframes MongoDBAnimation {
   from {
     width: 0%;
   }
@@ -425,8 +494,7 @@ nav ul li a:hover {
     width: 79%;
   }
 }
-
-@keyframes mysql {
+@keyframes MySQLAnimation {
   from {
     width: 0%;
   }
